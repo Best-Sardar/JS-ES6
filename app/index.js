@@ -66,3 +66,27 @@ let obj1 = {name1 : " mahdi " , family1 : " hosseini " };
 let name1 , family1;
 ({name1 ,family1} = obj1); // if we define variable in previus line we must use () for do this 
 console.log(name1 + family1, " : Destructuring Assignment");
+
+// arrow functions .........................................................................................
+let  helloword = () => {return "HELLO WORLD :| ";};
+console.log(helloword(), " : Arrow Function");
+// another example
+setTimeout(() => {console.log("HELLO WORLD :| ", " : Arrow Function");},3000);
+
+// map property ............................................................................................
+let array5 = [1 ,2 ,3];
+console.log(array5.map((n) => n+5) , " : Map and Filter");
+
+let array6 = [10 ,20 ,30 ,40 ,50 ,60 ,70 ];
+console.log(array6.filter((n) => n > 40));
+
+// String Helper Methods ...................................................................................
+let string1 = `hell${"oOo".repeat(10)} :))`;
+console.log(string1 ," : String Helper Methods");
+
+let boolean1 = "seyyedmahdi".startsWith("seyyed");
+console.log(boolean1, " : String Helper Methods"); // returned boolean : true
+console.log("seyyed mahdi".endsWith("mahdi"), " : String Helper Methods");
+console.log("seyyed mahdi".includes("ma") , " : String Helper Methods");
+// and more ....
+
