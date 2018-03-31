@@ -116,11 +116,11 @@ let number2 = (num) => {
 number1(123456789); //  return true
 number2(Math.pow(25, 50)); // return false
 
-//  Module in javascript
+//  Module in javascript ..........................................................
 import need from './moduletest';
 console.log(need.show(), " : Module in javascript");
 
-// Class in javascript
+// Class in javascript .............................................................
 class animal {
     constructor(name, height) {
         this.name = name;
@@ -129,13 +129,18 @@ class animal {
 
     helo() {
         console.log(`hello ${this.name} . are your height is ${this.height} ??`,
-        " : Class in javascript");
+            " : Class in javascript");
+    }
+
+    // we can use static method without creat object
+    static message(name) {
+        return `hello ${name} :)`
     }
 }
-class Lion extends animal{
-    constructor(name ,height ,color) {
-        super(name ,height);
-        this.color = color;        
+class Lion extends animal {
+    constructor(name, height, color) {
+        super(name, height);
+        this.color = color;
     }
 }
 
@@ -143,5 +148,24 @@ let king = new animal("lion", "1.5");
 console.log(king, " : Class in javascript");
 king.helo();
 
-let lion = new Lion("mos" , 1.8 , "golden");
+let lion = new Lion("mos", 1.8, "golden");
 console.log(lion, " : Class in javascript");
+
+console.log(animal.message("mahdi"), " : Class in javascript");
+
+
+// prototype ....................................................................
+function course_name(name, time, position) {
+    this.name = name;
+    this.time = time;
+    this.position = position;
+
+    this.showcourse = () => `name : ${this.name} time : ${this.time} pos : ${this.position}`
+}
+
+course_name.prototype.info = function(){return "add info function"}
+
+let course1 = new course_name("math", 21, "tehran");
+console.log(course1, " : prototype");
+console.log(course1.showcourse(), " : prototype");
+console.log(course1.info(), " : prototype");
