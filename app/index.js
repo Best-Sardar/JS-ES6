@@ -176,18 +176,25 @@ console.log(course1.info(), " : prototype");
 // set usually use for searching 
 // the element in Set is unique 
 
-let a = new Set();
-a.add([1, 2, 3]);
-a.add("mahdi");
-a.add(21);
-a.add({university : "shahed" , term : 6});
+let set = new Set();
+set.add([1, 2, 3]);
+set.add("mahdi");
+set.add(21);
+set.add({
+    university: "shahed",
+    term: 6
+});
 
-console.log(a, " : data strauctures");
-console.log(a.has(21), " : data strauctures");
-console.log(a.has({university : "shahed"}), " : data strauctures");
+console.log(set, " : data strauctures");
+console.log(set.has(21), " : data strauctures");
+console.log(set.has({
+    university: "shahed"
+}), " : data strauctures");
 
 // we can use Set constructor
-let array7 = ["mahdi", {name : "mahdi"}, 46, 78, ["man", "men"]];
+let array7 = ["mahdi", {
+    name: "mahdi"
+}, 46, 78, ["man", "men"]];
 let b = new Set(array7);
 console.log(b, " : data strauctures");
 
@@ -197,4 +204,34 @@ for (let element of b.values()) {
 
 let chars = "asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf";
 console.log(new Set(chars.split("")));
+
+// Map()
+let map = new Map();
+let key = 'key1';
+map.set(key, 'this is value for key1');
+map.set({
+    a: "key2"
+}, "this is value for key2");
+map.set(() => {
+    return "key3"
+}, "this is value for key3");
+
+console.log(map, " : data strauctures");
+
+// also we can use array to creat a map object
+let array8 = [
+    [1, 2],
+    ["mahdi", "hosseini"],
+    [{
+        name: "a"
+    }, () => {
+        return "Ok"
+    }]
+];
+let map2 = new Map(array8)
+console.log(map2, " : data strauctures");
+
+for (let [key, val] of map2) {
+    console.log(`the key : ${key} , the val : ${val}`, " : data strauctures");
+}
 
