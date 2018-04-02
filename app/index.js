@@ -163,9 +163,38 @@ function course_name(name, time, position) {
     this.showcourse = () => `name : ${this.name} time : ${this.time} pos : ${this.position}`
 }
 
-course_name.prototype.info = function(){return "add info function"}
+course_name.prototype.info = function () {
+    return "add info function"
+}
 
 let course1 = new course_name("math", 21, "tehran");
 console.log(course1, " : prototype");
 console.log(course1.showcourse(), " : prototype");
 console.log(course1.info(), " : prototype");
+
+// data strauctures in javascript ..........................................................
+// set usually use for searching 
+// the element in Set is unique 
+
+let a = new Set();
+a.add([1, 2, 3]);
+a.add("mahdi");
+a.add(21);
+a.add({university : "shahed" , term : 6});
+
+console.log(a, " : data strauctures");
+console.log(a.has(21), " : data strauctures");
+console.log(a.has({university : "shahed"}), " : data strauctures");
+
+// we can use Set constructor
+let array7 = ["mahdi", {name : "mahdi"}, 46, 78, ["man", "men"]];
+let b = new Set(array7);
+console.log(b, " : data strauctures");
+
+for (let element of b.values()) {
+    console.log(element, " : data strauctures");
+}
+
+let chars = "asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf";
+console.log(new Set(chars.split("")));
+
