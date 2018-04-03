@@ -256,9 +256,28 @@ console.log(need.show(), " : Module in javascript");
 
     let a = fun();
     let aa = a;
-    console.log(aa() , " : closures");
+    console.log(aa(), " : closures");
 
     let fun2 = (x) => (y) => x + y;
     let d = fun2("seyyed");
-    console.log(d(" mahdi") , " : closures");
+    console.log(d(" mahdi"), " : closures");
+}
+// private method
+{
+    let a = () => {
+        let name = "mahdi";
+        let family = " hosseini";
+        let show = () => {
+            return name + family;
+        }
+        return {
+            "f": name, // we can use f in call ofter
+            family,
+            show
+        }
+    }
+
+    let b = a();
+    console.log(b.f, " : private Methods");
+    console.log(b.show(), " : private Methods");
 }
