@@ -1,4 +1,5 @@
-const path = require('path');
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
     entry: './app/index.js',
@@ -8,13 +9,18 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.js$/, use: 'babel-loader' }
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
+            }
         ]
     },
-    devServer: {
-        contentBase: path.join(__dirname, "build"),
-        compress: true,
-        port: 3000,
-        inline:true
-    }
+    stats: {
+        colors: true
+    },
+    devtool: 'source-map',
+    mode :'development'
 };
