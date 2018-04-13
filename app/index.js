@@ -281,3 +281,61 @@ console.log(need.show(), " : Module in javascript");
     console.log(b.f, " : private Methods");
     console.log(b.show(), " : private Methods");
 }
+
+{
+// Generators in javascript ...............................................................
+// run to compile
+    function* generator(){
+        yield 'a';
+        yield 'b';
+        yield 'c';        
+    }
+
+    let sss = generator();
+    console.log(sss.next().value , " : Generators");
+    console.log(sss.next().value , " : Generators");
+    console.log(sss.next().value , " : Generators");
+    console.log(sss.next().value , " : Generators");
+
+    let counterMaker = function *(){
+        for (let i = 0; i < 4; i++) {
+            yield i;
+        }
+    }
+
+    let generator2 = counterMaker();
+    console.log(generator2.next().value, " : Generators");
+    console.log(generator2.next().value, " : Generators");
+    console.log(generator2.next().value, " : Generators");
+    console.log(generator2.next().value, " : Generators");
+    console.log(generator2.next().value, " : Generators");
+
+    function* event1(){
+        let count = 0;
+        while(true){
+            count += 2;
+            let temp = yield count;
+            if(temp === true){
+                count = -2;
+            }
+        }
+    }
+
+    let ev = event1();
+    console.log(ev.next().value, " : Generators");
+    console.log(ev.next().value, " : Generators");
+    console.log(ev.next().value, " : Generators");
+    console.log(ev.next().value, " : Generators");
+    console.log(ev.next(true).value, " : Generators");
+    console.log(ev.next().value, " : Generators");
+
+    function* arrayIterators(){
+        yield* arguments; // arguments is keyword !
+    };
+
+    let b = arrayIterators('a','b','c');
+    console.log(b.next().value, " : Generators");
+    console.log(b.next().value, " : Generators");
+    console.log(b.next().value, " : Generators");
+    console.log(b.next().value, " : Generators");
+}

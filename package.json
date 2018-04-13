@@ -4,12 +4,14 @@
   "description": "this repository create for show new property of EcmaScript 6;",
   "main": "index.js",
   "scripts": {
-    "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
+    "babel": "babel --presets es2015 app/index.js -o build/bundle.js",
     "start": "http-server",
-    "webpack": "webpack"
+    "webpack": "webpack --watch"
   },
-  "babel":{
-    "presets" : ["es2015"]
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   },
   "repository": {
     "type": "git",
